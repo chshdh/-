@@ -1,0 +1,39 @@
+#include<iostream>
+using namespace std;
+#include <iomanip>
+
+
+int  main()
+{
+    
+
+        int n;
+        cin >> n;
+        int* arr = new int[n];
+        for (int i = 0; i < n; i++)
+
+            arr[i] = i;
+        for (int q = 0; q < n; q++)
+            cin >> arr[q];                             //按照一定个数输入
+
+        for (int j = 0; j < n; j++)
+        {
+
+            for (int i = 0; i < n - 1 - j; i++)
+            {
+                int max = arr[i];
+                if (arr[i] > arr[i + 1])
+                {
+                    arr[i] = arr[i + 1];
+                    arr[i + 1] = max;
+                }
+            }
+        }
+        for (int w = 0; w < n; w++) {
+            cout << arr[w] << " ";
+        }                                      //冒泡排版
+ 
+
+   
+	
+}
